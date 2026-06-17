@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://hdai654.github.io/">
     <meta property="og:title" content="Hamed Amiri – Senior Backend Engineer">
     <meta property="og:description" content="Scalable backend systems, microservices, event-driven architectures, and high-performance APIs. Explore my portfolio, resume, and services.">
-    <meta property="og:image" content="https://hdai654.github.io/assets/img/profile-img.jpg">
+    <meta property="og:image" content="https://hdai654.github.io/assets/img/hamed-amiri-backend-engineer.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Hamed Amiri | Backend Engineering">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hamed Amiri – Backend Engineer">
     <meta name="twitter:description" content="Backend engineer building scalable, high‑performance systems with Python, Django, FastAPI, and microservices.">
-    <meta name="twitter:image" content="https://hdai654.github.io/assets/img/preview.jpg">
+    <meta name="twitter:image" content="https://hdai654.github.io/assets/img/hamed-amiri-backend-engineer.jpg">
     <meta name="twitter:site" content="@hdai654">
     
     <!-- Structured Data (JSON-LD) – Person + Profile + Projects -->
@@ -50,7 +50,10 @@
         "familyName": "Amiri",
         "jobTitle": "Backend Engineer",
         "description": "Backend Engineer specializing in Python, Django, FastAPI, distributed systems, event-driven architectures, microservices, and scalable backend services.",
-        "image": "https://hdai654.github.io/assets/img/profile-img.jpg",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://hdai654.github.io/assets/img/hamed-amiri-backend-engineer.jpg"
+        },
         "url": "https://hdai654.github.io/",
         "address": {
           "@type": "PostalAddress",
@@ -70,14 +73,6 @@
           "Docker", "Docker Compose", "CI/CD", "Pytest", "Clean Architecture",
           "Microservices", "Event-Driven Architecture", "RESTful API Design"
         ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Independent / Freelance"
-        },
-        "alumniOf": {
-          "@type": "Organization",
-          "name": "Self-taught"
-        },
         "nationality": "Iranian"
       }
     </script>
@@ -90,8 +85,7 @@
         "url": "https://hdai654.github.io/",
         "name": "Hamed Amiri – Backend Portfolio",
         "description": "Portfolio and resume of Hamed Amiri, Senior Backend Developer specializing in Python, Django, FastAPI, and microservices.",
-        "mainEntity": { "@id": "https://hdai654.github.io/#person" },
-        "dateModified": "2026-06-02"
+        "mainEntity": { "@id": "https://hdai654.github.io/#person" }
       }
     </script>
     
@@ -249,7 +243,7 @@
             <div class="reveal d2 flex justify-center md:justify-end">
               <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
                 <div class="pf w-full h-full rounded-3xl">
-                  <img src="https://hdai654.github.io/assets/img/profile-img.jpg" alt="Hamed Amiri – Backend Engineer" width="384" height="384" loading="eager">
+                  <img src="https://hdai654.github.io/assets/img/hamed-amiri-backend-engineer.jpg" alt="Hamed Amiri – Backend Engineer" width="384" height="384" loading="eager">
                 </div>
                 <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">Open to work</div>
               </div>
@@ -379,7 +373,7 @@
 
             <div class="reveal order-2 md:order-1">
               <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-                <img src="https://hdai654.github.io/assets/img/profile-img.jpg" alt="Hamed Amiri" width="384" height="384" loading="lazy">
+                <img src="https://hdai654.github.io/assets/img/hamed-amiri-backend-engineer.jpg" alt="Hamed Amiri" width="384" height="384" loading="lazy">
               </div>
             </div>
 
@@ -612,44 +606,28 @@
     </footer>
 
     <script>
-    function app() {
-      return {
-        dark: false,
-        mm: false,
-        sc: false,
-        s: 'hero',
-        init() {
-          this.dark = localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-          this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
-          window.addEventListener('scroll', () => { this.sc = window.scrollY > 20; this.updateSection(); }, { passive: true });
-          const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-          document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-          document.getElementById('yr').textContent = new Date().getFullYear();
-        },
-        updateSection() {
-          const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
-          if (atBottom) { this.s = 'contact'; return; }
-          const ids = ['contact','blog','experience','about','work','services','hero'];
-          for (const id of ids) { const el = document.getElementById(id); if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; } }
+      function app() {
+        return {
+          dark: false,
+          mm: false,
+          sc: false,
+          s: 'hero',
+          init() {
+            this.dark = localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+            window.addEventListener('scroll', () => { this.sc = window.scrollY > 20; this.updateSection(); }, { passive: true });
+            const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+            document.getElementById('yr').textContent = new Date().getFullYear();
+          },
+          updateSection() {
+            const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
+            if (atBottom) { this.s = 'contact'; return; }
+            const ids = ['contact','blog','experience','about','work','services','hero'];
+            for (const id of ids) { const el = document.getElementById(id); if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; } }
+          }
         }
       }
-    }
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const schemaScripts = document.querySelectorAll('script[type="application/ld+json"]');
-        schemaScripts.forEach(function(script) {
-          try {
-            const data = JSON.parse(script.textContent);
-            if (data['@type'] === 'ProfilePage' && data.dateModified) {
-              const today = new Date().toISOString().split('T')[0];
-              data.dateModified = today;
-              script.textContent = JSON.stringify(data);
-            }
-          } catch(e) {}
-        });
-      });
     </script>
 
     <script>
